@@ -1,0 +1,15 @@
+# Backend 
+backend/venv/ 
+backend/.env 
+backend/__pycache__/ 
+backend/**/__pycache__/ 
+backend/*.db 
+backend/lumio.db 
+ 
+# Frontend 
+frontend/node_modules/ 
+frontend/dist/ 
+ 
+# General 
+.DS_Store 
+*.log 
