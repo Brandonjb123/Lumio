@@ -16,7 +16,6 @@ export default function Login() {
       localStorage.setItem('lumio_token', res.data.access_token);
       // Refresh halaman agar interceptor Axios membaca token baru
       window.location.href = '/';
-      navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Login gagal');
     }
