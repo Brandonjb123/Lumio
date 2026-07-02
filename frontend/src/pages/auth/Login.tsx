@@ -14,7 +14,7 @@ export default function Login() {
     try {
       const res = await api.post('/auth/login', { username, password });
       localStorage.setItem('lumio_token', res.data.access_token);
-      navigate('/')
+      window.location.href = '/';
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Login gagal');
     }
