@@ -11,9 +11,9 @@ app = FastAPI(title="Lumio API", version="0.2.0")
 
 allow_origins=[
     "http://localhost:5173",
-    "https://lumio-six-topaz.vercel.app",           # domain utama
-    "https://lumio-ky9eamvxv-brandonjb-projects.vercel.app",  # domain preview
-    "https://*.vercel.app"                          # semua subdomain vercel (wildcard)
+    "https://lumio-six-topaz.vercel.app",
+    "https://lumio-ky9eamvxv-brandonjb-projects.vercel.app",
+    "https://*.vercel.app"
 ],
 
 # Register router
