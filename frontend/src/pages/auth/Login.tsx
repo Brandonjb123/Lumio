@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import api from '../../lib/api';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -13,7 +14,7 @@ export default function Login() {
     try {
       const res = await api.post('/auth/login', { username, password });
       localStorage.setItem('lumio_token', res.data.access_token);
-      window.location.href = '/';
+      navigate('/');
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Login gagal');
     }
@@ -35,7 +36,7 @@ export default function Login() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-              placeholder="brandon"
+              placeholder="Masukkan username"
               required
             />
           </div>
