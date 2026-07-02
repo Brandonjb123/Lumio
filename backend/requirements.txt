@@ -8,3 +8,4 @@ passlib[bcrypt]
 python-multipart
 groq
 python-dotenv
+openai
