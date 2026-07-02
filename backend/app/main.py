@@ -9,13 +9,12 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Lumio API", version="0.2.0")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+allow_origins=[
+    "http://localhost:5173",
+    "https://lumio-six-topaz.vercel.app",           # domain utama
+    "https://lumio-ky9eamvxv-brandonjb-projects.vercel.app",  # domain preview
+    "https://*.vercel.app"                          # semua subdomain vercel (wildcard)
+],
 
 # Register router
 app.include_router(auth.router)
